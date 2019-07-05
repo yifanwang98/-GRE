@@ -7,12 +7,36 @@
 //
 
 import UIKit
+import Foundation
+import os.log
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        do {
+            GreConfig.load()
+            if GreConfig.gre == nil {
+                if let filePath = Bundle.main.path(forResource: "greWordList", ofType: nil) {
+                    let fullText:String = try String(contentsOfFile: filePath)
+                    let textArr:[String] = fullText.components(separatedBy: "\n")
+                    var i = 0;
+                    GreConfig.gre = WordList()
+                    while i < textArr.count {
+                        GreConfig.gre?.wordList.append(GreWord(word: textArr[i],
+                                                               meaning: textArr[i + 1],
+                                                               description: textArr[i + 2]))
+                        i += 3
+                    }
+                    GreConfig.save()
+                }
+            }
+            
+        } catch {
+            /* error handling here */
+            os_log("[Error] LoadingViewController viewDidAppear()")
+        }
     }
 
 

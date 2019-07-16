@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		472B08B222DD5A5900E4200E /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B08B122DD5A5900E4200E /* StatsViewController.swift */; };
+		472B08B322DD5A5900E4200E /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B08B122DD5A5900E4200E /* StatsViewController.swift */; };
+		472B08B422DD5A5900E4200E /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B08B122DD5A5900E4200E /* StatsViewController.swift */; };
 		47B9DF5F22CECBE100D55F4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B9DF5E22CECBE100D55F4C /* AppDelegate.swift */; };
 		47B9DF6122CECBE100D55F4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B9DF6022CECBE100D55F4C /* ViewController.swift */; };
 		47B9DF6422CECBE100D55F4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B9DF6222CECBE100D55F4C /* Main.storyboard */; };
@@ -28,6 +31,9 @@
 		47B9DF9E22CED72800D55F4C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B9DF9D22CED72800D55F4C /* Config.swift */; };
 		47B9DF9F22CED72800D55F4C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B9DF9D22CED72800D55F4C /* Config.swift */; };
 		47B9DFA022CED72800D55F4C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B9DF9D22CED72800D55F4C /* Config.swift */; };
+		47F6BA6122DD417500724D11 /* LearntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F6BA6022DD417500724D11 /* LearntViewController.swift */; };
+		47F6BA6222DD417500724D11 /* LearntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F6BA6022DD417500724D11 /* LearntViewController.swift */; };
+		47F6BA6322DD417500724D11 /* LearntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F6BA6022DD417500724D11 /* LearntViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		472B08B122DD5A5900E4200E /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		47B9DF5B22CECBE100D55F4C /* GRE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GRE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B9DF5E22CECBE100D55F4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47B9DF6022CECBE100D55F4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +73,7 @@
 		47B9DF9522CED22A00D55F4C /* greWordList */ = {isa = PBXFileReference; lastKnownFileType = text; path = greWordList; sourceTree = "<group>"; };
 		47B9DF9922CED2A800D55F4C /* WordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList.swift; sourceTree = "<group>"; };
 		47B9DF9D22CED72800D55F4C /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		47F6BA6022DD417500724D11 /* LearntViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearntViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +132,8 @@
 				47B9DF6522CECBE100D55F4C /* GRE.xcdatamodeld */,
 				47B9DF6022CECBE100D55F4C /* ViewController.swift */,
 				47B9DF9122CED04200D55F4C /* StudyViewController.swift */,
+				47F6BA6022DD417500724D11 /* LearntViewController.swift */,
+				472B08B122DD5A5900E4200E /* StatsViewController.swift */,
 				47B9DF9522CED22A00D55F4C /* greWordList */,
 				47B9DF9922CED2A800D55F4C /* WordList.swift */,
 				47B9DF9D22CED72800D55F4C /* Config.swift */,
@@ -286,10 +296,12 @@
 			files = (
 				47B9DF9222CED04200D55F4C /* StudyViewController.swift in Sources */,
 				47B9DF6122CECBE100D55F4C /* ViewController.swift in Sources */,
+				472B08B222DD5A5900E4200E /* StatsViewController.swift in Sources */,
 				47B9DF5F22CECBE100D55F4C /* AppDelegate.swift in Sources */,
 				47B9DF6722CECBE100D55F4C /* GRE.xcdatamodeld in Sources */,
 				47B9DF9A22CED2A800D55F4C /* WordList.swift in Sources */,
 				47B9DF9E22CED72800D55F4C /* Config.swift in Sources */,
+				47F6BA6122DD417500724D11 /* LearntViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,8 +310,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				47B9DF9322CED04200D55F4C /* StudyViewController.swift in Sources */,
+				47F6BA6222DD417500724D11 /* LearntViewController.swift in Sources */,
 				47B9DF9F22CED72800D55F4C /* Config.swift in Sources */,
 				47B9DF7722CECBE200D55F4C /* GRETests.swift in Sources */,
+				472B08B322DD5A5900E4200E /* StatsViewController.swift in Sources */,
 				47B9DF9B22CED2A800D55F4C /* WordList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,8 +323,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				47B9DF9422CED04200D55F4C /* StudyViewController.swift in Sources */,
+				47F6BA6322DD417500724D11 /* LearntViewController.swift in Sources */,
 				47B9DFA022CED72800D55F4C /* Config.swift in Sources */,
 				47B9DF8222CECBE200D55F4C /* GREUITests.swift in Sources */,
+				472B08B422DD5A5900E4200E /* StatsViewController.swift in Sources */,
 				47B9DF9C22CED2A800D55F4C /* WordList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,6 +489,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TB545XQPS3;
 				INFOPLIST_FILE = GRE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -480,7 +497,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = YifanWang.GRE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -491,6 +508,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TB545XQPS3;
 				INFOPLIST_FILE = GRE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -498,7 +516,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = YifanWang.GRE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -21,11 +21,92 @@ class WordList: NSObject, NSCoding {
     required init?(coder aDecoder: NSCoder) {
         wordList = aDecoder.decodeObject(forKey: "wordList") as! [GreWord]
     }
+    
     override init() {
         super.init()
     }
+    
     var wordList: [GreWord] = []
     
+    func getRandom3Meaning(except: String) -> [String] {
+        var temp: [String] = []
+        var nums: [Int] = []
+        while temp.count != 3 {
+            let number = Int.random(in: 0 ..< wordList.count)
+            if wordList[number].word != except && !nums.contains(number) {
+                temp.append(wordList[number].meaning)
+                nums.append(number)
+            }
+        }
+        return temp
+    }
+    
+    func getWord() -> GreWord? {
+        for w in wordList {
+            if !w.studied {
+                return w
+            }
+        }
+        
+        return nil
+    }
+    
+    func listLearnt() -> [GreWord] {
+        var temp: [GreWord] = []
+        for w in wordList {
+            if w.studied {
+                temp.append(w)
+            }
+        }
+        return temp
+    }
+    
+    func markAsLearnt(_ w: String) -> Void {
+        for item in self.wordList {
+            if item.word == w {
+                item.markAsLearnt()
+                break
+            }
+        }
+    }
+    
+    func markAsCorrect(_ w: String) -> Void {
+        for item in self.wordList {
+            if item.word == w {
+                item.markAsLearnt()
+                break
+            }
+        }
+    }
+    
+    func markAsWrong(_ w: String) -> Void {
+        for item in self.wordList {
+            if item.word == w {
+                item.markAsWrong()
+                break
+            }
+        }
+    }
+    
+    func getStats() -> String {
+        var s = "Total Learnt: "
+        var count = 0, today = 0, yesterday = 0
+        for item in self.wordList {
+            if item.studied {
+                count += 1
+                if Calendar.current.isDateInToday(item.firstDate!) {
+                    today += 1
+                } else if Calendar.current.isDateInYesterday(item.firstDate!) {
+                    yesterday += 1
+                }
+            }
+        }
+        s.append("\(count)\n\n")
+        s.append("Total To Learn: \(self.wordList.count - count)\n\n")
+        s.append("Today Learnt: \(today)\n\n")
+        s.append("Yesterday Learnt: \(yesterday)\n\n")
+        return s
+    }
 }
 
 class GreWord: NSObject, NSCoding {
@@ -54,7 +135,7 @@ class GreWord: NSObject, NSCoding {
         let s = aDecoder.decodeBool(forKey: "studied")
         
         let f = (aDecoder.decodeObject(forKey: "firstDate") as? Date)
-        let l = aDecoder.decodeObject(forKey: "firstDate") as? Date
+        let l = aDecoder.decodeObject(forKey: "lastDate") as? Date
         
         let ns = aDecoder.decodeInteger(forKey: "numStudy")
         let ni = aDecoder.decodeInteger(forKey: "numIncorrect")
@@ -95,4 +176,39 @@ class GreWord: NSObject, NSCoding {
         numIncorrect = ni
     }
     
+    func markAsLearnt() -> Void {
+        studied = true
+        if firstDate == nil {
+            firstDate = Date()
+        }
+        
+        lastDate = Date()
+        numStudy += 1
+    }
+    
+    func markAsWrong() -> Void {
+        lastDate = Date()
+        numIncorrect += 1
+        numStudy += 1
+    }
+    
+    func toString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.timeZone = TimeZone(abbreviation: "EDT")
+        let f = dateFormatter.string(from: firstDate!)
+        let l = dateFormatter.string(from: lastDate!)
+        var s: String = ""
+        s.append(self.word)
+        s.append("\n\t")
+        s.append(self.meaning)
+        s.append("\n\t")
+        s.append(self.engMeaning)
+        s.append("\n\t")
+        s.append("\(f) ~ \(l)")
+        s.append("\n\t")
+        s.append("Incorrect Rate: \(numIncorrect) / \(numStudy)")
+        s.append("\n\n")
+        return s
+    }
 }

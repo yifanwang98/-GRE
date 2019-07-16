@@ -145,6 +145,8 @@ class StudyViewController: UIViewController {
     func reviewNext() -> Void {
         if currentIndex >= listLearnt!.count {
             mode(isStudy: true)
+            reviewAll.title = "Review"
+            reviewToday.isEnabled = true
             refresh()
             return
         }

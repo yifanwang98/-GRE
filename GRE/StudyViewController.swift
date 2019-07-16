@@ -99,7 +99,8 @@ class StudyViewController: UIViewController {
             meaningLabel.text = w.meaning
             explainationLabel.text = w.engMeaning
             GreConfig.currentWord = w
-            
+            sessionWordCount += 1
+            progress.text = "Session: \(sessionWordCount)"
             //pronounce(w.word)
         } else {
             wordLabel.text = "没词了"

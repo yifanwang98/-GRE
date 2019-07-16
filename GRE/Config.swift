@@ -20,6 +20,8 @@ class GreConfig {
     
     static var currentWord : GreWord?
     
+    static var loaded: Bool = false
+    
     static func load() -> Void {
 //        gre = UserDefaults.standard.object(forKey: "greWordList") as? WordList
 //        if let nsData = NSData(contentsOf: WordList.ArchiveURL) {

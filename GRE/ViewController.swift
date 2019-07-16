@@ -12,26 +12,38 @@ import os.log
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var stack: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        for btn in stack.subviews {
+            if btn is UIButton {
+                (btn as! UIButton).layer.cornerRadius = 5.0
+                (btn as! UIButton).backgroundColor = GreConfig.greyBGC
+            }
+        }
+        
         do {
-            GreConfig.load()
-            if GreConfig.gre == nil {
-                if let filePath = Bundle.main.path(forResource: "greWordList", ofType: nil) {
-                    let fullText:String = try String(contentsOfFile: filePath)
-                    let textArr:[String] = fullText.components(separatedBy: "\n").dropLast()
-                    print(textArr.count)
-                    var i = 0;
-                    GreConfig.gre = WordList()
-                    while i < textArr.count - 2 {
-                        GreConfig.gre?.wordList.append(GreWord(word: textArr[i],
-                                                               meaning: textArr[i + 1],
-                                                               description: textArr[i + 2]))
-                        i += 3
+            if !GreConfig.loaded {
+                GreConfig.load()
+                if GreConfig.gre == nil {
+                    if let filePath = Bundle.main.path(forResource: "greWordList", ofType: nil) {
+                        let fullText:String = try String(contentsOfFile: filePath)
+                        let textArr:[String] = fullText.components(separatedBy: "\n").dropLast()
+                        print(textArr.count)
+                        var i = 0;
+                        GreConfig.gre = WordList()
+                        while i < textArr.count - 2 {
+                            GreConfig.gre?.wordList.append(GreWord(word: textArr[i],
+                                                                   meaning: textArr[i + 1],
+                                                                   description: textArr[i + 2]))
+                            i += 3
+                        }
+                        GreConfig.save()
                     }
-                    GreConfig.save()
                 }
+                GreConfig.loaded = true
             }
             
         } catch {

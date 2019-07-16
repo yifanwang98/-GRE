@@ -14,7 +14,7 @@ class GreConfig {
     
     static let wrongBGC: UIColor = UIColor(red: 204/255.0, green: 8/255.0, blue: 4/255.0, alpha: 1.0)
     static let correctBGC: UIColor = UIColor(red: 0, green: 148/255.0, blue: 169/255.0, alpha: 1.0)
-    static let greyBGC: UIColor = UIColor(red: 223/255.0, green: 223/255.0, blue: 223/255.0, alpha: 1.0)
+    static let greyBGC: UIColor = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1.0)
     
     static var gre: WordList?
     

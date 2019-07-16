@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 class StudyViewController: UIViewController {
     
@@ -23,6 +24,8 @@ class StudyViewController: UIViewController {
     @IBOutlet weak var dontKnow: UIButton!
     
     var mode_study: Bool = true
+    
+    let synthesizer = AVSpeechSynthesizer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,9 +85,19 @@ class StudyViewController: UIViewController {
             meaningLabel.text = w.meaning
             explainationLabel.text = w.engMeaning
             GreConfig.currentWord = w
+            
+            //pronounce(w.word)
         } else {
             wordLabel.text = "没词了"
         }
+    }
+    
+    func pronounce(_ text: String) -> Void {
+        let utterance  = AVSpeechUtterance(string: text)
+        utterance.voice = AVSpeechSynthesisVoice()
+        utterance.rate = 0.6
+        
+        self.synthesizer.speak(utterance)
     }
     
     var listLearnt:[GreWord]?

@@ -171,8 +171,8 @@
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57z-0O-pQW">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="58.333333333333336"/>
                                         <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="记住啦！">
+                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="35"/>
+                                        <state key="normal" title="Next">
                                             <color key="titleColor" red="0.043137254899999998" green="0.42745098040000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
@@ -333,6 +333,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Z1J-P1-wDz"/>
+        <segue reference="NCN-09-37h"/>
     </inferredMetricsTieBreakers>
 </document>

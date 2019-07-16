@@ -23,6 +23,8 @@ class StudyViewController: UIViewController {
     @IBOutlet weak var option4: UIButton!
     @IBOutlet weak var dontKnow: UIButton!
     
+    @IBOutlet weak var progress: UILabel!
+    
     var mode_study: Bool = true
     
     let synthesizer = AVSpeechSynthesizer()
@@ -43,18 +45,28 @@ class StudyViewController: UIViewController {
         resetUI(dontKnow)
     }
     
+    @IBOutlet weak var reviewToday: UIBarButtonItem!
+    @IBOutlet weak var reviewAll: UIBarButtonItem!
     
     @IBAction func switchMode(_ sender: UIBarButtonItem) {
-        if sender.title!.count > 8 {
+        if sender.title! == "Study" {
             mode(isStudy: true)
             sender.title = "Review"
+            reviewToday.isEnabled = true
             refresh()
-        } else {
+        } else if sender.title! == "Review" {
             mode(isStudy: false)
-            sender.title = "Skip This Review"
+            sender.title = "Study"
             review()
+        } else if sender.title! == "Today" {
+            mode(isStudy: false)
+            reviewAll.title = "Study"
+            reviewTodayWords()
+            reviewToday.isEnabled = false
         }
     }
+    
+    var sessionWordCount = 0
     
     func mode(isStudy: Bool) -> Void {
         if isStudy {
@@ -64,6 +76,8 @@ class StudyViewController: UIViewController {
             option3.isHidden = true
             option4.isHidden = true
             dontKnow.isHidden = true
+            sessionWordCount = 0
+            progress.text = "Session: \(sessionWordCount)"
         } else {
             meaningLabel.text = ""
             explainationLabel.text = ""
@@ -116,12 +130,25 @@ class StudyViewController: UIViewController {
         reviewNext()
     }
     
+    func reviewTodayWords() -> Void {
+        listLearnt = GreConfig.gre?.listLearntToday()
+        currentIndex = 0
+        listLearnt?.shuffle()
+        
+        if listLearnt!.isEmpty {
+            mode(isStudy: true)
+            return
+        }
+        reviewNext()
+    }
+    
     func reviewNext() -> Void {
         if currentIndex >= listLearnt!.count {
             mode(isStudy: true)
             refresh()
             return
         }
+        progress.text = "\(currentIndex + 1) / \(listLearnt!.count)"
         wordLabel.text = listLearnt![currentIndex].word
         let number = Int.random(in: 1 ..< 5)
         let m = listLearnt![currentIndex].meaning
@@ -166,8 +193,14 @@ class StudyViewController: UIViewController {
         btn.layer.cornerRadius = 5.0
     }
     
+    var selected: Bool = false
+    
+    
     @IBAction func selectAnswer(_ sender: UIButton) {
         DispatchQueue.main.async {
+            if self.selected {
+                return
+            }
             if sender == self.correct {
                 self.markAsCorrect(sender)
                 GreConfig.gre?.markAsCorrect(self.listLearnt![self.currentIndex].word)
@@ -176,15 +209,17 @@ class StudyViewController: UIViewController {
                 self.markAsError(sender)
                 GreConfig.gre?.markAsWrong(self.listLearnt![self.currentIndex].word)
             }
+            self.selected = true
             self.currentIndex += 1
             GreConfig.save()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.9, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: {
                 self.resetUI(self.option1)
                 self.resetUI(self.option2)
                 self.resetUI(self.option3)
                 self.resetUI(self.option4)
                 self.resetUI(self.dontKnow)
                 self.reviewNext()
+                self.selected = false
             })
         }
     }

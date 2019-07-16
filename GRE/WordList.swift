@@ -61,6 +61,16 @@ class WordList: NSObject, NSCoding {
         return temp
     }
     
+    func listLearntToday() -> [GreWord] {
+        var temp: [GreWord] = []
+        for w in wordList {
+            if w.studied && Calendar.current.isDateInToday(w.firstDate!) {
+                temp.append(w)
+            }
+        }
+        return temp
+    }
+    
     func markAsLearnt(_ w: String) -> Void {
         for item in self.wordList {
             if item.word == w {

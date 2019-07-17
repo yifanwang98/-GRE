@@ -145,10 +145,7 @@ class StudyViewController: UIViewController {
     
     func reviewNext() -> Void {
         if currentIndex >= listLearnt!.count {
-            mode(isStudy: true)
-            reviewAll.title = "Review"
-            reviewToday.isEnabled = true
-            refresh()
+            switchMode(reviewAll)
             return
         }
         progress.text = "\(currentIndex + 1) / \(listLearnt!.count)"

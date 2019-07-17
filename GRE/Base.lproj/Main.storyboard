@@ -23,7 +23,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jgk-3g-z7L">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="144.66666666666666"/>
-                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="47"/>
+                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="47"/>
                                         <state key="normal" title="Study">
                                             <color key="titleColor" red="0.043137254899999998" green="0.42745098040000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -33,7 +33,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gvk-Tx-OyY">
                                         <rect key="frame" x="0.0" y="194.66666666666669" width="343" height="144.66666666666669"/>
-                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="47"/>
+                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="47"/>
                                         <state key="normal" title="Learnt">
                                             <color key="titleColor" red="0.043137254899999998" green="0.42745098040000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -43,7 +43,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXD-E1-nSH">
                                         <rect key="frame" x="0.0" y="389.33333333333337" width="343" height="144.66666666666663"/>
-                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="47"/>
+                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="47"/>
                                         <state key="normal" title="Stats">
                                             <color key="titleColor" red="0.043137254899999998" green="0.42745098040000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>

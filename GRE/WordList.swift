@@ -61,6 +61,17 @@ class WordList: NSObject, NSCoding {
         return temp
     }
     
+    func listWorst() -> [GreWord] {
+        var temp: [GreWord] = []
+        for w in wordList {
+            if w.studied && w.numIncorrect > 0 {
+                temp.append(w)
+            }
+        }
+        temp.sort(by: {(x: GreWord, y: GreWord) -> Bool in return (Float(x.numIncorrect) / Float(x.numStudy)) > (Float(y.numIncorrect) / Float(y.numStudy))})
+        return temp
+    }
+    
     func listLearntToday() -> [GreWord] {
         var temp: [GreWord] = []
         for w in wordList {

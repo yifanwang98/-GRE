@@ -21,6 +21,7 @@ class ReviewViewController: UIViewController {
     @IBOutlet weak var dontKnow: UIButton!
     
     @IBOutlet weak var progress: UILabel!
+    @IBOutlet weak var correctRateLabel: UILabel!
     
     let synthesizer = AVSpeechSynthesizer()
     
@@ -34,12 +35,14 @@ class ReviewViewController: UIViewController {
         resetUI(dontKnow)
         
         reviewAllWords()
+        correctRateLabel.text = "0.00%"
     }
     
     @IBOutlet weak var reviewToday: UIBarButtonItem!
     @IBOutlet weak var reviewAll: UIBarButtonItem!
     
     @IBAction func switchMode(_ sender: UIBarButtonItem) {
+        correctRateLabel.text = "0.00%"
         if sender.title! == "All" {
             reviewAll.title = "Worst"
             reviewAllWords()
@@ -53,6 +56,8 @@ class ReviewViewController: UIViewController {
     
     var listLearnt:[GreWord]?
     var currentIndex: Int = 0
+    var correctNum: Int = 0
+    
     weak var correct: UIButton?
     
     func reviewAllWords() -> Void {
@@ -158,6 +163,7 @@ class ReviewViewController: UIViewController {
                 return
             }
             if sender == self.correct {
+                self.correctNum += 1
                 self.markAsCorrect(sender)
                 GreConfig.gre?.markAsCorrect(self.listLearnt![self.currentIndex].word)
             } else {
@@ -167,6 +173,8 @@ class ReviewViewController: UIViewController {
             }
             self.selected = true
             self.currentIndex += 1
+            self.correctRateLabel.text = String(format: "%.2f", (Float(self.correctNum) / Float(self.currentIndex) * 100.0))
+            self.correctRateLabel.text?.append("%")
             GreConfig.save()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: {
                 self.resetUI(self.option1)

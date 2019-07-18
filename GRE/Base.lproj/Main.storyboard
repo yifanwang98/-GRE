@@ -398,12 +398,23 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eDn-yz-bzU">
-                                <rect key="frame" x="0.0" y="44" width="359" height="20.666666666666671"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bvw-h4-ifj">
+                                <rect key="frame" x="16" y="44" width="343" height="41.333333333333343"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" ?" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qTj-Wh-LqW">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20.666666666666668"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eDn-yz-bzU">
+                                        <rect key="frame" x="0.0" y="20.666666666666671" width="343" height="20.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -411,19 +422,20 @@
                             <constraint firstItem="MYk-8k-F3f" firstAttribute="leading" secondItem="Uk2-jo-sLj" secondAttribute="leading" constant="20" id="GnO-hY-GCo"/>
                             <constraint firstItem="MYk-8k-F3f" firstAttribute="top" secondItem="Uk2-jo-sLj" secondAttribute="top" constant="100" id="IHV-F1-96B"/>
                             <constraint firstItem="Uk2-jo-sLj" firstAttribute="trailing" secondItem="MYk-8k-F3f" secondAttribute="trailing" constant="20" id="JkB-Aw-nvQ"/>
-                            <constraint firstItem="eDn-yz-bzU" firstAttribute="leading" secondItem="Uk2-jo-sLj" secondAttribute="leading" id="NYK-1s-CDI"/>
+                            <constraint firstItem="Uk2-jo-sLj" firstAttribute="trailing" secondItem="bvw-h4-ifj" secondAttribute="trailing" constant="16" id="Rmh-Y5-47W"/>
                             <constraint firstItem="qwr-9X-zU7" firstAttribute="top" secondItem="MYk-8k-F3f" secondAttribute="bottom" constant="100" id="Xnz-LW-NvV"/>
                             <constraint firstItem="Uk2-jo-sLj" firstAttribute="bottom" secondItem="7hB-GC-jsE" secondAttribute="bottom" id="cMB-8G-Dko"/>
                             <constraint firstItem="7hB-GC-jsE" firstAttribute="trailing" secondItem="Uk2-jo-sLj" secondAttribute="trailing" id="ex8-c8-DPW"/>
+                            <constraint firstItem="bvw-h4-ifj" firstAttribute="leading" secondItem="Uk2-jo-sLj" secondAttribute="leading" constant="16" id="f7H-eb-y3N"/>
                             <constraint firstItem="qwr-9X-zU7" firstAttribute="leading" secondItem="Uk2-jo-sLj" secondAttribute="leading" constant="16" id="iaY-y2-kbY"/>
                             <constraint firstItem="Uk2-jo-sLj" firstAttribute="trailing" secondItem="qwr-9X-zU7" secondAttribute="trailing" constant="16" id="ka8-gI-2Se"/>
                             <constraint firstItem="7hB-GC-jsE" firstAttribute="leading" secondItem="Uk2-jo-sLj" secondAttribute="leading" id="llH-gi-dLy"/>
-                            <constraint firstAttribute="trailing" secondItem="eDn-yz-bzU" secondAttribute="trailing" constant="16" id="rCo-eR-vWF"/>
-                            <constraint firstItem="eDn-yz-bzU" firstAttribute="top" secondItem="Uk2-jo-sLj" secondAttribute="top" id="uDx-f9-SpY"/>
+                            <constraint firstItem="bvw-h4-ifj" firstAttribute="top" secondItem="Uk2-jo-sLj" secondAttribute="top" id="qCw-6s-2fg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Uk2-jo-sLj"/>
                     </view>
                     <connections>
+                        <outlet property="correctRateLabel" destination="qTj-Wh-LqW" id="4jO-Qx-NJa"/>
                         <outlet property="dontKnow" destination="Xld-IK-wYg" id="F79-IG-Axx"/>
                         <outlet property="option1" destination="L9C-be-jdO" id="ODx-3K-aGg"/>
                         <outlet property="option2" destination="ZhA-qK-ti9" id="fMW-5o-6Iw"/>
@@ -441,6 +453,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NCN-09-37h"/>
+        <segue reference="r8b-sa-7en"/>
     </inferredMetricsTieBreakers>
 </document>

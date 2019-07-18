@@ -13,17 +13,17 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GRE" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="GRE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="2S2-gO-Sh6">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2S2-gO-Sh6">
                                 <rect key="frame" x="16" y="144" width="343" height="534"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jgk-3g-z7L">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="144.66666666666666"/>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="47"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="118.66666666666667"/>
+                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="45"/>
                                         <state key="normal" title="Study">
                                             <color key="titleColor" red="0.043137254899999998" green="0.42745098040000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -31,9 +31,19 @@
                                             <segue destination="bDb-rX-bkI" kind="presentation" modalTransitionStyle="crossDissolve" id="het-eQ-6Uz"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sh8-m5-q8H">
+                                        <rect key="frame" x="0.0" y="138.66666666666669" width="343" height="118.33333333333331"/>
+                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="45"/>
+                                        <state key="normal" title="Review">
+                                            <color key="titleColor" red="0.043137254899999998" green="0.42745098040000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="dlO-LH-NyX" kind="presentation" id="78e-7c-EYK"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gvk-Tx-OyY">
-                                        <rect key="frame" x="0.0" y="194.66666666666669" width="343" height="144.66666666666669"/>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="47"/>
+                                        <rect key="frame" x="0.0" y="277" width="343" height="118.66666666666669"/>
+                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="45"/>
                                         <state key="normal" title="Learnt">
                                             <color key="titleColor" red="0.043137254899999998" green="0.42745098040000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -42,8 +52,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXD-E1-nSH">
-                                        <rect key="frame" x="0.0" y="389.33333333333337" width="343" height="144.66666666666663"/>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="47"/>
+                                        <rect key="frame" x="0.0" y="415.66666666666663" width="343" height="118.33333333333337"/>
+                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="45"/>
                                         <state key="normal" title="Stats">
                                             <color key="titleColor" red="0.043137254899999998" green="0.42745098040000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -137,19 +147,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xdo-ut-3Rt">
-                                <rect key="frame" x="20" y="144" width="335" height="54"/>
+                                <rect key="frame" x="20" y="164" width="335" height="54"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meaning" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ks-HE-upM">
-                                <rect key="frame" x="20" y="263" width="335" height="21.666666666666686"/>
+                                <rect key="frame" x="20" y="288" width="335" height="21.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j8e-gC-6am">
-                                <rect key="frame" x="20" y="292.66666666666669" width="335" height="21.666666666666686"/>
+                                <rect key="frame" x="20" y="317.66666666666669" width="335" height="21.666666666666686"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -163,24 +173,18 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="oPn-Ko-UpH"/>
-                                    <barButtonItem title="Review" id="gPO-RP-XQE">
+                                    <barButtonItem systemItem="play" id="nOF-sR-fBM">
                                         <connections>
-                                            <action selector="switchMode:" destination="bDb-rX-bkI" id="26H-sZ-YuQ"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem systemItem="flexibleSpace" id="gvE-8u-pnV"/>
-                                    <barButtonItem title="Today" id="u9b-y7-qmI">
-                                        <connections>
-                                            <action selector="switchMode:" destination="bDb-rX-bkI" id="vSM-Yi-Ijf"/>
+                                            <action selector="pronounce:" destination="bDb-rX-bkI" id="zBR-Lu-cA5"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FEs-Gq-gf0">
-                                <rect key="frame" x="16" y="344.33333333333326" width="343" height="376.66666666666674"/>
+                                <rect key="frame" x="16" y="389.33333333333326" width="343" height="323.66666666666674"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57z-0O-pQW">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="56"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="323.66666666666669"/>
                                         <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="35"/>
                                         <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
@@ -189,66 +193,6 @@
                                         </state>
                                         <connections>
                                             <action selector="markRemembered:" destination="bDb-rX-bkI" eventType="touchUpInside" id="sE6-RK-ISR"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zab-U7-6rg">
-                                        <rect key="frame" x="0.0" y="64" width="343" height="56.333333333333343"/>
-                                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
-                                        <state key="normal" title="不知道">
-                                            <color key="titleColor" red="0.043137254899999998" green="0.42745098040000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="selectAnswer:" destination="bDb-rX-bkI" eventType="touchUpInside" id="GsH-Nn-zKV"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08J-C7-hdN">
-                                        <rect key="frame" x="0.0" y="128.33333333333337" width="343" height="56"/>
-                                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
-                                        <state key="normal" title="Option 1">
-                                            <color key="titleColor" red="0.043137254899999998" green="0.42745098040000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="selectAnswer:" destination="bDb-rX-bkI" eventType="touchUpInside" id="9Bh-yW-sVf"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysg-Dx-i4B">
-                                        <rect key="frame" x="0.0" y="192.33333333333331" width="343" height="56"/>
-                                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
-                                        <state key="normal" title="Option 2">
-                                            <color key="titleColor" red="0.043137254899999998" green="0.42745098040000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="selectAnswer:" destination="bDb-rX-bkI" eventType="touchUpInside" id="tKU-e4-3ZC"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDE-ta-gXp">
-                                        <rect key="frame" x="0.0" y="256.33333333333331" width="343" height="56.333333333333314"/>
-                                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
-                                        <state key="normal" title="Option 3">
-                                            <color key="titleColor" red="0.043137254899999998" green="0.42745098040000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="selectAnswer:" destination="bDb-rX-bkI" eventType="touchUpInside" id="AOm-V0-LqF"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGS-a4-kod">
-                                        <rect key="frame" x="0.0" y="320.66666666666669" width="343" height="56"/>
-                                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
-                                        <state key="normal" title="Option 4">
-                                            <color key="titleColor" red="0.043137254899999998" green="0.42745098040000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="selectAnswer:" destination="bDb-rX-bkI" eventType="touchUpInside" id="LOL-4f-Tcj"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -265,18 +209,18 @@
                             <constraint firstItem="Glx-1w-lxw" firstAttribute="top" secondItem="0mK-2S-jjV" secondAttribute="top" id="3Wr-d7-A3t"/>
                             <constraint firstItem="j8e-gC-6am" firstAttribute="leading" secondItem="0mK-2S-jjV" secondAttribute="leading" constant="20" id="5C7-rE-BbX"/>
                             <constraint firstItem="0mK-2S-jjV" firstAttribute="trailing" secondItem="Xdo-ut-3Rt" secondAttribute="trailing" constant="20" id="9dT-Yc-RAO"/>
-                            <constraint firstItem="2ks-HE-upM" firstAttribute="top" secondItem="Xdo-ut-3Rt" secondAttribute="bottom" constant="65" id="ERa-3A-3eM"/>
+                            <constraint firstItem="2ks-HE-upM" firstAttribute="top" secondItem="Xdo-ut-3Rt" secondAttribute="bottom" constant="70" id="ERa-3A-3eM"/>
                             <constraint firstItem="9fN-1V-ypl" firstAttribute="trailing" secondItem="0mK-2S-jjV" secondAttribute="trailing" id="Fjs-c9-cGo"/>
                             <constraint firstItem="Xdo-ut-3Rt" firstAttribute="leading" secondItem="0mK-2S-jjV" secondAttribute="leading" constant="20" id="Kgw-qz-8eU"/>
                             <constraint firstItem="0mK-2S-jjV" firstAttribute="trailing" secondItem="2ks-HE-upM" secondAttribute="trailing" constant="20" id="Rcd-eg-tdq"/>
                             <constraint firstItem="0mK-2S-jjV" firstAttribute="trailing" secondItem="j8e-gC-6am" secondAttribute="trailing" constant="20" id="Ur9-9i-iGW"/>
-                            <constraint firstItem="Xdo-ut-3Rt" firstAttribute="top" secondItem="0mK-2S-jjV" secondAttribute="top" constant="100" id="VCj-zd-qBk"/>
+                            <constraint firstItem="Xdo-ut-3Rt" firstAttribute="top" secondItem="0mK-2S-jjV" secondAttribute="top" constant="120" id="VCj-zd-qBk"/>
                             <constraint firstItem="0mK-2S-jjV" firstAttribute="bottom" secondItem="9fN-1V-ypl" secondAttribute="bottom" id="VRl-A6-iKT"/>
                             <constraint firstItem="Glx-1w-lxw" firstAttribute="leading" secondItem="0mK-2S-jjV" secondAttribute="leading" id="Wfr-co-wfP"/>
                             <constraint firstItem="j8e-gC-6am" firstAttribute="top" secondItem="2ks-HE-upM" secondAttribute="bottom" constant="8" id="mWt-gZ-gmP"/>
                             <constraint firstItem="9fN-1V-ypl" firstAttribute="leading" secondItem="0mK-2S-jjV" secondAttribute="leading" id="nWE-o4-eG5"/>
-                            <constraint firstItem="9fN-1V-ypl" firstAttribute="top" secondItem="FEs-Gq-gf0" secondAttribute="bottom" constant="8" id="oMe-PV-7WJ"/>
-                            <constraint firstItem="FEs-Gq-gf0" firstAttribute="top" secondItem="j8e-gC-6am" secondAttribute="bottom" constant="30" id="qiC-0N-1tL"/>
+                            <constraint firstItem="9fN-1V-ypl" firstAttribute="top" secondItem="FEs-Gq-gf0" secondAttribute="bottom" constant="16" id="oMe-PV-7WJ"/>
+                            <constraint firstItem="FEs-Gq-gf0" firstAttribute="top" secondItem="j8e-gC-6am" secondAttribute="bottom" constant="50" id="qiC-0N-1tL"/>
                             <constraint firstAttribute="trailing" secondItem="Glx-1w-lxw" secondAttribute="trailing" constant="16" id="tQv-rq-Q1E"/>
                             <constraint firstItem="2ks-HE-upM" firstAttribute="leading" secondItem="0mK-2S-jjV" secondAttribute="leading" constant="20" id="vof-M6-DSu"/>
                             <constraint firstItem="0mK-2S-jjV" firstAttribute="trailing" secondItem="FEs-Gq-gf0" secondAttribute="trailing" constant="16" id="xyQ-8Z-eYq"/>
@@ -285,23 +229,16 @@
                         <viewLayoutGuide key="safeArea" id="0mK-2S-jjV"/>
                     </view>
                     <connections>
-                        <outlet property="dontKnow" destination="Zab-U7-6rg" id="G9w-tz-lo6"/>
                         <outlet property="explainationLabel" destination="j8e-gC-6am" id="H6A-Vh-1V2"/>
                         <outlet property="meaningLabel" destination="2ks-HE-upM" id="Bjl-nF-Glt"/>
-                        <outlet property="option1" destination="08J-C7-hdN" id="dyE-Qh-rSP"/>
-                        <outlet property="option2" destination="ysg-Dx-i4B" id="s1f-7r-Yqt"/>
-                        <outlet property="option3" destination="GDE-ta-gXp" id="6rb-f7-acD"/>
-                        <outlet property="option4" destination="bGS-a4-kod" id="QhF-3T-8oE"/>
                         <outlet property="progress" destination="Glx-1w-lxw" id="Ozt-Zs-kaU"/>
                         <outlet property="rememberedBTN" destination="57z-0O-pQW" id="Dh1-yo-IDs"/>
-                        <outlet property="reviewAll" destination="gPO-RP-XQE" id="fOT-LH-0WZ"/>
-                        <outlet property="reviewToday" destination="u9b-y7-qmI" id="1T1-hl-9Ko"/>
                         <outlet property="wordLabel" destination="Xdo-ut-3Rt" id="CMA-Ew-qeo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M3X-66-s3u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="948" y="118"/>
+            <point key="canvasLocation" x="983" y="-593"/>
         </scene>
         <!--Stats View Controller-->
         <scene sceneID="FYg-iG-mDq">
@@ -359,6 +296,148 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g5Z-Qi-ISx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="903" y="842"/>
+        </scene>
+        <!--Review View Controller-->
+        <scene sceneID="0ZI-eM-IYp">
+            <objects>
+                <viewController storyboardIdentifier="review" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dlO-LH-NyX" customClass="ReviewViewController" customModule="GRE" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sZY-A4-cst">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MYk-8k-F3f">
+                                <rect key="frame" x="20" y="144" width="335" height="54"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hB-GC-jsE">
+                                <rect key="frame" x="0.0" y="729" width="375" height="49"/>
+                                <items>
+                                    <barButtonItem title="Back" id="Cfw-34-EXx">
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" id="r8b-sa-7en"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="0ZN-um-Dxg"/>
+                                    <barButtonItem title="Worst" id="YQq-OS-a2R">
+                                        <connections>
+                                            <action selector="switchMode:" destination="dlO-LH-NyX" id="123-6D-2Ms"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="Kgi-Fw-itn"/>
+                                    <barButtonItem title="Today" id="1py-kY-EyN">
+                                        <connections>
+                                            <action selector="switchMode:" destination="dlO-LH-NyX" id="QNr-gt-ViI"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qwr-9X-zU7">
+                                <rect key="frame" x="16" y="298" width="343" height="415"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xld-IK-wYg">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="76.666666666666671"/>
+                                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                        <state key="normal" title="不知道">
+                                            <color key="titleColor" red="0.043137254899999998" green="0.42745098040000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectAnswer:" destination="dlO-LH-NyX" eventType="touchUpInside" id="7N7-Ok-Z0L"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9C-be-jdO">
+                                        <rect key="frame" x="0.0" y="84.666666666666686" width="343" height="76.666666666666686"/>
+                                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                        <state key="normal" title="Option 1">
+                                            <color key="titleColor" red="0.043137254899999998" green="0.42745098040000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectAnswer:" destination="dlO-LH-NyX" eventType="touchUpInside" id="uwB-nB-g9W"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZhA-qK-ti9">
+                                        <rect key="frame" x="0.0" y="169.33333333333331" width="343" height="76.333333333333314"/>
+                                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                        <state key="normal" title="Option 2">
+                                            <color key="titleColor" red="0.043137254899999998" green="0.42745098040000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectAnswer:" destination="dlO-LH-NyX" eventType="touchUpInside" id="q9N-o2-XH0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jds-gd-gtq">
+                                        <rect key="frame" x="0.0" y="253.6666666666666" width="343" height="76.666666666666657"/>
+                                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                        <state key="normal" title="Option 3">
+                                            <color key="titleColor" red="0.043137254899999998" green="0.42745098040000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectAnswer:" destination="dlO-LH-NyX" eventType="touchUpInside" id="K45-eM-S1h"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecg-c6-gsa">
+                                        <rect key="frame" x="0.0" y="338.33333333333337" width="343" height="76.666666666666686"/>
+                                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                        <state key="normal" title="Option 4">
+                                            <color key="titleColor" red="0.043137254899999998" green="0.42745098040000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectAnswer:" destination="dlO-LH-NyX" eventType="touchUpInside" id="9eK-Bk-rAz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eDn-yz-bzU">
+                                <rect key="frame" x="0.0" y="44" width="359" height="20.666666666666671"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7hB-GC-jsE" firstAttribute="top" secondItem="qwr-9X-zU7" secondAttribute="bottom" constant="16" id="Fwi-xe-xU6"/>
+                            <constraint firstItem="MYk-8k-F3f" firstAttribute="leading" secondItem="Uk2-jo-sLj" secondAttribute="leading" constant="20" id="GnO-hY-GCo"/>
+                            <constraint firstItem="MYk-8k-F3f" firstAttribute="top" secondItem="Uk2-jo-sLj" secondAttribute="top" constant="100" id="IHV-F1-96B"/>
+                            <constraint firstItem="Uk2-jo-sLj" firstAttribute="trailing" secondItem="MYk-8k-F3f" secondAttribute="trailing" constant="20" id="JkB-Aw-nvQ"/>
+                            <constraint firstItem="eDn-yz-bzU" firstAttribute="leading" secondItem="Uk2-jo-sLj" secondAttribute="leading" id="NYK-1s-CDI"/>
+                            <constraint firstItem="qwr-9X-zU7" firstAttribute="top" secondItem="MYk-8k-F3f" secondAttribute="bottom" constant="100" id="Xnz-LW-NvV"/>
+                            <constraint firstItem="Uk2-jo-sLj" firstAttribute="bottom" secondItem="7hB-GC-jsE" secondAttribute="bottom" id="cMB-8G-Dko"/>
+                            <constraint firstItem="7hB-GC-jsE" firstAttribute="trailing" secondItem="Uk2-jo-sLj" secondAttribute="trailing" id="ex8-c8-DPW"/>
+                            <constraint firstItem="qwr-9X-zU7" firstAttribute="leading" secondItem="Uk2-jo-sLj" secondAttribute="leading" constant="16" id="iaY-y2-kbY"/>
+                            <constraint firstItem="Uk2-jo-sLj" firstAttribute="trailing" secondItem="qwr-9X-zU7" secondAttribute="trailing" constant="16" id="ka8-gI-2Se"/>
+                            <constraint firstItem="7hB-GC-jsE" firstAttribute="leading" secondItem="Uk2-jo-sLj" secondAttribute="leading" id="llH-gi-dLy"/>
+                            <constraint firstAttribute="trailing" secondItem="eDn-yz-bzU" secondAttribute="trailing" constant="16" id="rCo-eR-vWF"/>
+                            <constraint firstItem="eDn-yz-bzU" firstAttribute="top" secondItem="Uk2-jo-sLj" secondAttribute="top" id="uDx-f9-SpY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Uk2-jo-sLj"/>
+                    </view>
+                    <connections>
+                        <outlet property="dontKnow" destination="Xld-IK-wYg" id="F79-IG-Axx"/>
+                        <outlet property="option1" destination="L9C-be-jdO" id="ODx-3K-aGg"/>
+                        <outlet property="option2" destination="ZhA-qK-ti9" id="fMW-5o-6Iw"/>
+                        <outlet property="option3" destination="Jds-gd-gtq" id="sqD-KI-ocv"/>
+                        <outlet property="option4" destination="ecg-c6-gsa" id="Puq-9B-J0Q"/>
+                        <outlet property="progress" destination="eDn-yz-bzU" id="beN-mu-Ehz"/>
+                        <outlet property="reviewAll" destination="YQq-OS-a2R" id="bHh-0n-bCd"/>
+                        <outlet property="reviewToday" destination="1py-kY-EyN" id="PfW-dQ-gM8"/>
+                        <outlet property="wordLabel" destination="MYk-8k-F3f" id="1y2-zy-CkE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gJl-Uy-1OU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="982" y="117"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

@@ -45,7 +45,7 @@ class ReviewViewController: UIViewController {
             reviewAllWords()
         } else if sender.title! == "Worst" {
             reviewAll.title = "All"
-            reviewTodayWords()
+            reviewWorstWords()
         } else if sender.title! == "Today" {
             reviewTodayWords()
         }

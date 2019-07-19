@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2S2-gO-Sh6">
-                                <rect key="frame" x="16" y="144" width="343" height="534"/>
+                                <rect key="frame" x="16" y="94" width="343" height="634"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jgk-3g-z7L">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="118.66666666666667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="143.66666666666666"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="45"/>
                                         <state key="normal" title="Study">
                                             <color key="titleColor" red="0.043137254899999998" green="0.42745098040000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -32,7 +32,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sh8-m5-q8H">
-                                        <rect key="frame" x="0.0" y="138.66666666666669" width="343" height="118.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="163.66666666666669" width="343" height="143.33333333333331"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="45"/>
                                         <state key="normal" title="Review">
                                             <color key="titleColor" red="0.043137254899999998" green="0.42745098040000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -42,7 +42,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gvk-Tx-OyY">
-                                        <rect key="frame" x="0.0" y="277" width="343" height="118.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="327" width="343" height="143.66666666666663"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="45"/>
                                         <state key="normal" title="Learnt">
                                             <color key="titleColor" red="0.043137254899999998" green="0.42745098040000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -52,7 +52,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXD-E1-nSH">
-                                        <rect key="frame" x="0.0" y="415.66666666666663" width="343" height="118.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="490.66666666666657" width="343" height="143.33333333333331"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="45"/>
                                         <state key="normal" title="Stats">
                                             <color key="titleColor" red="0.043137254899999998" green="0.42745098040000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -66,8 +66,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2S2-gO-Sh6" secondAttribute="bottom" constant="100" id="XR0-pZ-mxp"/>
-                            <constraint firstItem="2S2-gO-Sh6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="Z7Z-1v-Zvg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2S2-gO-Sh6" secondAttribute="bottom" constant="50" id="XR0-pZ-mxp"/>
+                            <constraint firstItem="2S2-gO-Sh6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Z7Z-1v-Zvg"/>
                             <constraint firstItem="2S2-gO-Sh6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cXb-vV-36m"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2S2-gO-Sh6" secondAttribute="trailing" constant="16" id="emy-QD-Tl5"/>
                         </constraints>

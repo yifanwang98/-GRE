@@ -13,7 +13,7 @@ import AVFoundation
 class ReviewViewController: UIViewController {
     
     @IBOutlet weak var wordLabel: UILabel!
-
+    
     @IBOutlet weak var option1: UIButton!
     @IBOutlet weak var option2: UIButton!
     @IBOutlet weak var option3: UIButton!
@@ -43,6 +43,9 @@ class ReviewViewController: UIViewController {
     
     @IBAction func switchMode(_ sender: UIBarButtonItem) {
         correctRateLabel.text = "0.00%"
+        correctNum = 0
+        currentIndex = 0
+        
         if sender.title! == "All" {
             reviewAll.title = "Worst"
             reviewAllWords()
@@ -62,7 +65,6 @@ class ReviewViewController: UIViewController {
     
     func reviewAllWords() -> Void {
         listLearnt = GreConfig.gre?.listLearnt()
-        currentIndex = 0
         listLearnt?.shuffle()
         
         if listLearnt!.isEmpty {
@@ -77,7 +79,6 @@ class ReviewViewController: UIViewController {
     
     func reviewWorstWords() -> Void {
         listLearnt = GreConfig.gre?.listWorst()
-        currentIndex = 0
         listLearnt?.shuffle()
         
         if listLearnt!.isEmpty {
@@ -90,7 +91,6 @@ class ReviewViewController: UIViewController {
     
     func reviewTodayWords() -> Void {
         listLearnt = GreConfig.gre?.listLearntToday()
-        currentIndex = 0
         listLearnt?.shuffle()
         
         if listLearnt!.isEmpty {
@@ -158,36 +158,43 @@ class ReviewViewController: UIViewController {
     var selected: Bool = false
     
     @IBAction func selectAnswer(_ sender: UIButton) {
-        DispatchQueue.main.async {
-            if self.selected {
-                return
-            }
-            if sender == self.correct {
-                self.correctNum += 1
-                self.markAsCorrect(sender)
+        if self.selected {
+            return
+        }
+        self.selected = true
+        
+        if sender == self.correct {
+            self.correctNum += 1
+            self.correctRateLabel.text = String(format: "%.2f", (Float(self.correctNum) / Float(self.currentIndex + 1) * 100.0))
+            self.correctRateLabel.text?.append("%")
+            self.markAsCorrect(sender)
+            DispatchQueue.global().sync {
                 GreConfig.gre?.markAsCorrect(self.listLearnt![self.currentIndex].word)
-            } else {
-                self.markAsCorrect(self.correct!)
-                self.markAsError(sender)
+            }
+        } else {
+            self.correctRateLabel.text = String(format: "%.2f", (Float(self.correctNum) / Float(self.currentIndex + 1) * 100.0))
+            self.correctRateLabel.text?.append("%")
+            self.markAsCorrect(self.correct!)
+            self.markAsError(sender)
+            DispatchQueue.global().sync {
                 GreConfig.gre?.markAsWrong(self.listLearnt![self.currentIndex].word)
             }
-            self.selected = true
-            self.currentIndex += 1
-            self.correctRateLabel.text = String(format: "%.2f", (Float(self.correctNum) / Float(self.currentIndex) * 100.0))
-            self.correctRateLabel.text?.append("%")
-            GreConfig.save()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: {
-                self.resetUI(self.option1)
-                self.resetUI(self.option2)
-                self.resetUI(self.option3)
-                self.resetUI(self.option4)
-                self.resetUI(self.dontKnow)
-                self.reviewNext()
-                self.selected = false
-            })
         }
+        self.currentIndex += 1
+        DispatchQueue.global().sync {
+            GreConfig.save()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: {
+            self.resetUI(self.option1)
+            self.resetUI(self.option2)
+            self.resetUI(self.option3)
+            self.resetUI(self.option4)
+            self.resetUI(self.dontKnow)
+            self.reviewNext()
+            self.selected = false
+        })
     }
-
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }

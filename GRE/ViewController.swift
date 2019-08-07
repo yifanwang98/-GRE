@@ -57,5 +57,9 @@ class ViewController: UIViewController {
         return true
     }
     
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return true
+    }
+    
 }
 

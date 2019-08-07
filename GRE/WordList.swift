@@ -51,6 +51,64 @@ class WordList: NSObject, NSCoding {
         return nil
     }
     
+    func getMinDate() -> Date {
+        var min: Date = Date()
+        for w in wordList {
+            if w.firstDate?.compare(min) == .orderedAscending {
+                min = w.firstDate!
+            }
+        }
+        return min
+    }
+    
+    func getMaxDate() -> Date {
+        var max: Date = Date()
+        for w in wordList {
+            if w.firstDate?.compare(max) == .orderedDescending {
+                max = w.firstDate!
+            }
+        }
+        return max
+    }
+    
+    func customizeReview(from: Date, to: Date, limit: Int, sortBy: Int, order: Int) -> [GreWord] {
+        var temp: [GreWord] = []
+        for w in wordList {
+            if w.studied {
+                if w.firstDate!.compare(from) == .orderedAscending || w.firstDate!.compare(to) == .orderedDescending {
+                    continue
+                }
+                temp.append(w)
+            }
+        }
+        switch sortBy {
+        case 1:
+            if order == 0 {
+                temp.sort(by: {(x: GreWord, y: GreWord) -> Bool in return (Float(x.numIncorrect) / Float(x.numStudy)) < (Float(y.numIncorrect) / Float(y.numStudy))})
+            } else {
+                temp.sort(by: {(x: GreWord, y: GreWord) -> Bool in return (Float(x.numIncorrect) / Float(x.numStudy)) > (Float(y.numIncorrect) / Float(y.numStudy))})
+            }
+        case 2:
+            if order == 0 {
+                temp.sort(by: {(x: GreWord, y: GreWord) -> Bool in return x.firstDate!.compare(y.firstDate!) == .orderedAscending })
+            } else {
+                temp.sort(by: {(x: GreWord, y: GreWord) -> Bool in return x.firstDate!.compare(y.firstDate!) == .orderedDescending})
+            }
+        case 3:
+            if order == 0 {
+                temp.sort(by: {(x: GreWord, y: GreWord) -> Bool in return x.numStudy < y.numStudy })
+            } else {
+                temp.sort(by: {(x: GreWord, y: GreWord) -> Bool in return x.numStudy > y.numStudy })
+            }
+        default:
+            temp.shuffle()
+        }
+        var result: [GreWord] = []
+        result.append(contentsOf: temp.prefix(limit))
+        temp.removeAll()
+        return result
+    }
+    
     func listLearnt() -> [GreWord] {
         var temp: [GreWord] = []
         for w in wordList {

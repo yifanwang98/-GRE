@@ -18,4 +18,12 @@ class StatsViewController: UIViewController {
         ta.text.removeAll()
         ta.text.append(contentsOf: GreConfig.gre!.getStats())
     }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return true
+    }
 }

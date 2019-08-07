@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class ReviewViewController: UIViewController {
+class ReviewViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var wordLabel: UILabel!
     
@@ -23,6 +23,16 @@ class ReviewViewController: UIViewController {
     @IBOutlet weak var progress: UILabel!
     @IBOutlet weak var correctRateLabel: UILabel!
     
+    @IBOutlet weak var settingView: UIView!
+    @IBOutlet weak var from: UIDatePicker!
+    @IBOutlet weak var to: UIDatePicker!
+    @IBOutlet weak var limit: UITextField!
+    @IBOutlet weak var sortBy: UISegmentedControl!
+    @IBOutlet weak var order: UISegmentedControl!
+    @IBOutlet weak var cover: UIView!
+    @IBOutlet weak var errorLabel: UILabel!
+    
+    
     let synthesizer = AVSpeechSynthesizer()
     
     override func viewDidLoad() {
@@ -34,8 +44,15 @@ class ReviewViewController: UIViewController {
         resetUI(option4)
         resetUI(dontKnow)
         
-        reviewAllWords()
+        //reviewAllWords()
         correctRateLabel.text = "0.00%"
+        
+        errorLabel.text = ""
+        
+        from.minimumDate = GreConfig.gre?.getMinDate()
+        from.maximumDate = Calendar.current.startOfDay(for: GreConfig.gre?.getMaxDate() ?? Date())
+        to.minimumDate = from.minimumDate
+        to.maximumDate = Date()
     }
     
     @IBOutlet weak var reviewToday: UIBarButtonItem!
@@ -46,6 +63,27 @@ class ReviewViewController: UIViewController {
         correctNum = 0
         currentIndex = 0
         
+        if sender.title! == "Start" {
+            listLearnt = GreConfig.gre?.customizeReview(from: from.date,
+                                                        to: to.date,
+                                                        limit: Int(limit.text!) ?? 1,
+                                                        sortBy: sortBy.selectedSegmentIndex,
+                                                        order: order.selectedSegmentIndex)
+            if listLearnt!.count > 0 {
+                settingView.isHidden = true
+                cover.isHidden = true
+                sender.title! = "Edit"
+                reviewNext()
+            } else {
+                errorLabel.text = "Unsatisfiable setting"
+            }
+        } else if sender.title! == "Edit" {
+            settingView.isHidden = false
+            cover.isHidden = false
+            sender.title! = "Start"
+            errorLabel.text = ""
+        }
+        /*
         if sender.title! == "All" {
             reviewAll.title = "Worst"
             reviewAllWords()
@@ -54,7 +92,11 @@ class ReviewViewController: UIViewController {
             reviewWorstWords()
         } else if sender.title! == "Today" {
             reviewTodayWords()
-        }
+        }*/
+    }
+    
+    @IBAction func endEdit(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
     
     var listLearnt:[GreWord]?
@@ -105,7 +147,7 @@ class ReviewViewController: UIViewController {
     
     func reviewNext() -> Void {
         if currentIndex >= listLearnt!.count {
-            switchMode(reviewAll)
+            switchMode(reviewToday)
             return
         }
         progress.text = "\(currentIndex + 1) / \(listLearnt!.count)"
@@ -152,7 +194,7 @@ class ReviewViewController: UIViewController {
         btn.setTitleColor(.black, for: .normal)
         btn.layer.cornerRadius = 5.0
         btn.titleLabel?.adjustsFontSizeToFitWidth = true
-        btn.titleLabel?.numberOfLines = 1
+        btn.titleLabel?.numberOfLines = 2
     }
     
     var selected: Bool = false
@@ -165,15 +207,11 @@ class ReviewViewController: UIViewController {
         
         if sender == self.correct {
             self.correctNum += 1
-            self.correctRateLabel.text = String(format: "%.2f", (Float(self.correctNum) / Float(self.currentIndex + 1) * 100.0))
-            self.correctRateLabel.text?.append("%")
             self.markAsCorrect(sender)
             DispatchQueue.global().sync {
                 GreConfig.gre?.markAsCorrect(self.listLearnt![self.currentIndex].word)
             }
         } else {
-            self.correctRateLabel.text = String(format: "%.2f", (Float(self.correctNum) / Float(self.currentIndex + 1) * 100.0))
-            self.correctRateLabel.text?.append("%")
             self.markAsCorrect(self.correct!)
             self.markAsError(sender)
             DispatchQueue.global().sync {
@@ -181,6 +219,9 @@ class ReviewViewController: UIViewController {
             }
         }
         self.currentIndex += 1
+        self.correctRateLabel.text = String(format: "%.2f", (Float(self.correctNum) / Float(self.currentIndex) * 100.0))
+        self.correctRateLabel.text?.append("%")
+        
         DispatchQueue.global().sync {
             GreConfig.save()
         }
@@ -196,6 +237,10 @@ class ReviewViewController: UIViewController {
     }
     
     override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    override var prefersHomeIndicatorAutoHidden: Bool {
         return true
     }
 }

@@ -52,7 +52,7 @@ class ReviewViewController: UIViewController, UITextFieldDelegate, UIGestureReco
         from.minimumDate = GreConfig.gre?.getMinDate()
         from.maximumDate = Date()
         to.minimumDate = from.minimumDate
-        to.maximumDate = Date()
+        to.maximumDate = Calendar.current.date(byAdding: .minute, value: 30, to: Date())
     }
     
     @IBOutlet weak var reviewToday: UIBarButtonItem!

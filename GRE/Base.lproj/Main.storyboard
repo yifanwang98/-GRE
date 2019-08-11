@@ -430,7 +430,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="Xja-eL-QWz">
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="Xja-eL-QWz">
                                                         <rect key="frame" x="0.0" y="32.333333333333343" width="343" height="100"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="mfE-L1-wIw"/>
@@ -453,7 +453,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="4Ex-8w-n3a">
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="4Ex-8w-n3a">
                                                         <rect key="frame" x="0.0" y="32.333333333333371" width="343" height="100"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="U9w-BA-dfd"/>

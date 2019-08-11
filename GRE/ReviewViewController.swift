@@ -50,7 +50,7 @@ class ReviewViewController: UIViewController, UITextFieldDelegate, UIGestureReco
         errorLabel.text = ""
         
         from.minimumDate = GreConfig.gre?.getMinDate()
-        from.maximumDate = Calendar.current.startOfDay(for: GreConfig.gre?.getMaxDate() ?? Date())
+        from.maximumDate = Date()
         to.minimumDate = from.minimumDate
         to.maximumDate = Date()
     }

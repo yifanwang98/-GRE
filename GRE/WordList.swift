@@ -85,19 +85,19 @@ class WordList: NSObject, NSCoding {
         case 1:
             if order == 0 {
                 temp.sort(by: {(x: GreWord, y: GreWord) -> Bool in return (Float(x.numIncorrect) / Float(x.numStudy)) < (Float(y.numIncorrect) / Float(y.numStudy))})
-            } else {
+            } else if order == 1 {
                 temp.sort(by: {(x: GreWord, y: GreWord) -> Bool in return (Float(x.numIncorrect) / Float(x.numStudy)) > (Float(y.numIncorrect) / Float(y.numStudy))})
             }
         case 2:
             if order == 0 {
                 temp.sort(by: {(x: GreWord, y: GreWord) -> Bool in return x.firstDate!.compare(y.firstDate!) == .orderedAscending })
-            } else {
+            } else if order == 1 {
                 temp.sort(by: {(x: GreWord, y: GreWord) -> Bool in return x.firstDate!.compare(y.firstDate!) == .orderedDescending})
             }
         case 3:
             if order == 0 {
                 temp.sort(by: {(x: GreWord, y: GreWord) -> Bool in return x.numStudy < y.numStudy })
-            } else {
+            } else if order == 1 {
                 temp.sort(by: {(x: GreWord, y: GreWord) -> Bool in return x.numStudy > y.numStudy })
             }
         default:
@@ -105,6 +105,9 @@ class WordList: NSObject, NSCoding {
         }
         var result: [GreWord] = []
         result.append(contentsOf: temp.prefix(limit))
+        if order == 3 && sortBy != 0 {
+            result.shuffle()
+        }
         temp.removeAll()
         return result
     }

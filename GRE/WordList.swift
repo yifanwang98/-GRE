@@ -112,7 +112,7 @@ class WordList: NSObject, NSCoding {
         return result
     }
     
-    func listLearnt() -> [GreWord] {
+    func listLearnt(_ char: Character? = nil) -> [GreWord] {
         var temp: [GreWord] = []
         for w in wordList {
             if w.studied {

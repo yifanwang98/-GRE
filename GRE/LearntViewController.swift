@@ -24,7 +24,12 @@ class LearntViewController: UIViewController, UITableViewDataSource, UITableView
 
     @IBOutlet weak var tableView: UITableView!
     
-    var wordList: [GreWord] = []
+    var wordList: [GreWord] {
+        if GreConfig.gre == nil {
+            return []
+        }
+        return GreConfig.gre!.listLearnt()
+    }
     
     override func viewDidLoad() {
         tableView.dataSource = self

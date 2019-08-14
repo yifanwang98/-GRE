@@ -116,8 +116,17 @@ class WordList: NSObject, NSCoding {
         var temp: [GreWord] = []
         for w in wordList {
             if w.studied {
-                temp.append(w)
+                if char != nil {
+                    if w.word.first == char {
+                        temp.append(w)
+                    }
+                } else {
+                    temp.append(w)
+                }
             }
+        }
+        temp.sort { (a, b) -> Bool in
+            a.word < b.word
         }
         return temp
     }

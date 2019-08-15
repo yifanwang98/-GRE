@@ -13,7 +13,7 @@ import os.log
 class LearntViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 26
+        return 27
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -33,7 +33,11 @@ class LearntViewController: UIViewController, UITableViewDataSource, UITableView
                 currentSelection = indexPath.item
                 (cell as! AlphabetCell).containerView.backgroundColor = GreConfig.correctBGC
                 (cell as! AlphabetCell).label.textColor = .white
-                currentChar = (cell as! AlphabetCell).label.text?.first
+                if currentSelection > 0 {
+                    currentChar = (cell as! AlphabetCell).label.text?.first
+                } else {
+                    currentChar = nil
+                }
             }
             tableView.reloadData()
             if tableView.numberOfRows(inSection: 0) > 0 {
@@ -70,6 +74,9 @@ class LearntViewController: UIViewController, UITableViewDataSource, UITableView
     var wordList: [GreWord] {
         if GreConfig.gre == nil {
             return []
+        }
+        if currentSelection == 0 {
+            return GreConfig.gre!.listLearntToday()
         }
         if currentChar != nil {
             return GreConfig.gre!.listLearnt(currentChar?.lowercased().first)
@@ -125,13 +132,18 @@ class AlphabetCell: UICollectionViewCell {
     
     func setUp(_ item: Int, currentSelction: Int) -> Void {
         containerView.layer.cornerRadius = 5.0
-        var i = 0
-        for char in AlphabetCell.alphabet {
-            if i == item {
-                label.text = String(char)
-                break
+        
+        if item > 0 {
+            var i = 1
+            for char in AlphabetCell.alphabet {
+                if i == item {
+                    label.text = String(char)
+                    break
+                }
+                i += 1
             }
-            i += 1
+        } else if item == 0 {
+            label.text = "Today"
         }
         
         if currentSelction == item {

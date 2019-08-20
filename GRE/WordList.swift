@@ -154,7 +154,7 @@ class WordList: NSObject, NSCoding {
     
     func markAsLearnt(_ w: String) -> Void {
         for item in self.wordList {
-            if item.word == w {
+            if item.word == w && item.studied == false {
                 item.markAsLearnt()
                 break
             }
